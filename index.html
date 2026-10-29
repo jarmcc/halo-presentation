@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f7ef">
+  <meta name="description" content="Halo's sprint reflections: the people, decisions, and lessons behind our first prototype.">
+  <title>Halo · Our sprint, in reflection</title>
+  <link rel="icon" type="image/png" href="assets/halo-logo.png">
+  <link rel="stylesheet" href="assets/vendor/reveal/dist/reset.css">
+  <link rel="stylesheet" href="assets/vendor/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/vendor/reveal/dist/reveal.js" defer></script>
+  <script src="assets/vendor/reveal/dist/plugin/notes.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#presentation">Skip to presentation</a>
+  <div class="reveal" id="presentation" aria-label="Halo sprint reflections">
+    <div class="slides">
+
+      <section id="beginning" class="opening-slide" data-title="A moment before sending" data-chapter="Introduction" data-timing="30" data-background-color="#eaf1f5">
+        <div class="slide-content opening-layout">
+          <div class="opening-copy">
+            <img class="opening-logo" src="assets/halo-logo.png" alt="Halo" width="606" height="267">
+            <p class="eyebrow">LET'S START WITH ONE CONVERSATION</p>
+            <h1>One message.<br>A moment<br> to <em>pause.</em></h1>
+            <p class="opening-description">This is the moment<br> we are designing for.</p>
+            <p class="opening-takeaway" id="opening-takeaway">A little guidance, before a message goes out.</p>
+          </div>
+          <div class="opening-scene" data-stage="0" data-prevent-swipe aria-label="Animated fictional conversation showing Halo's nudge before sending">
+            <div class="conversation-header"><span class="contact-avatar" aria-hidden="true">A</span><div><span class="contact-name">Alex</span><span class="contact-detail">A new contact</span></div><span class="conversation-tag">FICTIONAL CHAT</span></div>
+            <div class="conversation-body">
+              <div class="contact-typing" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="incoming-message"><span class="bubble-sender">Alex</span><p>which sch u from?</p></div>
+              <div class="opening-nudge"><span class="nudge-halo" aria-hidden="true"></span><span class="guidance-label">A MOMENT WITH HALO</span><p>Quick pause. Your school could help someone find you. Keep it private?</p><button class="opening-keep" type="button">Keep editing</button></div>
+            </div>
+            <div class="opening-composer"><span class="composer-text" id="opening-typed"></span><span class="composer-caret" aria-hidden="true"></span><span class="composer-placeholder">Message</span><button class="composer-send" type="button" aria-label="Try the fictional send action">↑</button><img class="send-cursor" src="assets/icons/mouse-pointer-2.svg" alt="" aria-hidden="true" width="24" height="24"></div>
+            <div class="opening-scene-footer"><span class="scene-status" id="opening-status" aria-live="polite">A conversation begins.</span><button class="opening-replay" type="button" aria-label="Replay the opening conversation">Replay <span aria-hidden="true">↻</span></button></div>
+            <p class="opening-disclosure">Illustrative sequence. Halo checks the outgoing draft. Nothing is sent.</p>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>30 seconds · Opening.</strong> Imagine a young person chatting with someone new. A simple question comes in. They start typing a reply, and are about to share where they go to school. Halo offers a moment to pause before that message goes out. The young person can keep editing and choose what to share. Halo is an Android keyboard that gives supportive guidance on outgoing drafts. This is a fictional illustration of the moment we are designing for. Our sprint was about learning who we serve and how that guidance should work.</p><p>Sources: https://github.com/deadgravy/halo-app/blob/main/README.md and app/src/main/resources/halo-jev-policy.json. The illustrated conversation is fictional; Halo does not inspect incoming messages.</p></aside>
+      </section>
+
+      <section id="halo" class="cover" data-title="Our sprint" data-chapter="Introduction" data-timing="10" data-background-color="#f9f7ef">
+        <div class="slide-content">
+          <div class="wordmark"><img src="assets/halo-logo.png" alt="Halo" width="606" height="267"></div>
+          <p class="eyebrow cover-eyebrow">OUR SPRINT, IN REFLECTION</p>
+          <h1>Building Halo,<br>finding our <em class="ink-underline">focus.</em></h1>
+          <p class="cover-description">The people and decisions that shaped our first app.</p>
+          <div class="cover-bottom"><span>Week 5 to Week 11</span><span>Our decisions, week by week</span></div>
+        </div>
+        <aside class="notes"><p><strong>10 seconds · Our sprint.</strong> This is the story of how our thinking evolved throughout the sprint. We chose our main stakeholders, reconsidered Halo's purpose, narrowed our scope and turned those decisions into our first prototype. Here are the people and lessons behind those decisions.</p><p>Source: w12 reflections.pdf, pages 1–3.</p></aside>
+      </section>
+
+      <section id="defining" data-title="Defining" data-week="W5" data-chapter="The journey" data-timing="35" data-auto-animate data-auto-animate-id="scope" data-background-color="#f9f7ef">
+        <div class="slide-content">
+          <p class="eyebrow">WEEK 5 / DEFINING</p>
+          <h2>We cared about <em>every risk.</em></h2>
+          <p class="intro-line">And we wanted Halo to handle all of them.</p>
+          <div class="ambition-sheet" aria-label="Our early feature ambitions">
+            <span data-id="scope-keyboard" class="ambition-item main-ambition">Safer messaging</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="0">Cyberbullying</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="0">Personal information</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="1">Image analysis</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="1">Singaporean slang</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="1">Offline AI</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="2">Different languages</span>
+            <span class="ambition-item fragment fade-up" data-fragment-index="2">Parent &amp; child versions</span>
+          </div>
+          <p class="handwritten ambition-note fragment fade-up" data-fragment-index="2">We had a lot of ideas. A first version? Less clear.</p>
+        </div>
+        <aside class="notes"><p><strong>35 seconds · Defining.</strong> At the beginning we were passionate about the many risks children face online. We wanted to cover personal-information sharing, cyberbullying, coercion and intimate-content risks. We also imagined image checks, local processing and Singapore-specific language support.  Looking back, that enthusiasm made it hard to decide what the first MVP actually needed to do. Our first lesson was that caring about a problem does not automatically give us a focused product.</p><p>Source: w12 reflections.pdf, page 1, Week 5. Items are early ambitions, not claims that all features exist.</p></aside>
+      </section>
+
+      <section id="website" class="website-slide" data-title="Our first website" data-week="W5" data-chapter="The journey" data-timing="30" data-background-color="#eaf1f5">
+        <div class="slide-content two-column website-grid">
+          <div>
+            <p class="eyebrow">WEEK 5 / MAKING THE IDEA VISIBLE</p>
+            <h2>Our first<br><em>website.</em></h2>
+            <p class="body-copy">We needed an easier way to explain Halo.</p>
+            <div class="website-points">
+              <p class="fragment fade-up">A demo made the prompts easier to picture.</p>
+              <p class="fragment fade-up">It gave us something concrete to share during outreach.</p>
+            </div>
+          </div>
+          <div class="website-window" aria-label="Preview of the actual Halo website">
+            <div class="website-browserbar"><span class="window-dots" aria-hidden="true">● ● ●</span><a class="website-address" href="https://halo-khaki.vercel.app/" target="_blank" rel="noopener noreferrer">halo-khaki.vercel.app <span aria-hidden="true">↗</span></a></div>
+            <a class="website-preview-link" href="https://halo-khaki.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Halo website"><img src="assets/halo-website.jpg" alt="Halo's actual website showing the interactive conversation demo and scenario choices" width="1360" height="1000"></a>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>30 seconds · The website.</strong> In Week 5 we realised that our idea was becoming difficult to explain. We built a website with a demo showing what the app's prompts could look like. That made the idea more concrete and gave us something to share as we looked for parents to interview. It was an important early thing we made, even before the app took shape. Click the preview or its address to open the site.</p><p>Sources: w12 reflections.pdf, page 1, Week 5; https://halo-khaki.vercel.app/. The screenshot shows the current site, captured 30 October 2026, rather than an archived Week 5 version.</p></aside>
+      </section>
+
+      <section id="stakeholders" data-title="Choosing where to begin" data-week="W6" data-chapter="The journey" data-timing="35" data-background-color="#f7f0dc">
+        <div class="slide-content">
+          <p class="eyebrow">WEEK 6 / CHOOSING WHERE TO BEGIN</p>
+          <h2>Whose perspective<br><em>did we hear first?</em></h2>
+          <div class="stakeholder-pair">
+            <div class="stakeholder"><img class="stakeholder-art" src="assets/parents.png" alt="Illustration of two parents talking together" width="1024" height="1024"><span class="small-label">THE LIKELY CUSTOMER</span><h3>Parents</h3><p>Would decide whether to pay.<br>Wanted reassurance.</p></div>
+            <div class="stakeholder fragment fade-up"><img class="stakeholder-art" src="assets/children.png" alt="Illustration of two young people looking at a phone" width="1024" height="1024"><span class="small-label">THE PRIMARY USER</span><h3>Children</h3><p>Would use the keyboard.<br>Needed an experience they could accept.</p></div>
+          </div>
+          <p class="lesson fragment fade-up">Parents were our first research focus. Children remained our primary users.</p>
+        </div>
+        <aside class="notes"><p><strong>35 seconds · Stakeholder choice.</strong> Finding interviewees was harder than expected. We shared outreach messages and added a survey to make participation easier. We also had to decide whether Halo was aimed at parents or children. We chose parents as our initial research focus because they would likely be the paying customer. But the keyboard would be used by children. This distinction mattered: a parent's interest alone would not tell us whether a child would want the product.</p><p>Source: w12 reflections.pdf, page 1, Week 6. </p></aside>
+      </section>
+
+      <section id="listening" class="listening-slide" data-title="Listening to parents" data-week="RECESS" data-chapter="The journey" data-timing="55" data-background-color="#eaf1f5">
+        <div class="slide-content two-column listening-grid">
+          <div class="interview-count"><img class="editorial-icon interview-icon" src="assets/icons/messages-square.svg" alt="" width="64" height="64" aria-hidden="true"><span class="big-number">10</span><span class="number-caption">parent interviews</span><p class="handwritten">This is where our thinking shifted.</p></div>
+          <div>
+            <p class="eyebrow">RECESS WEEK / LISTENING</p>
+            <h2>Concern came<br>with <em>hesitation.</em></h2>
+            <div class="listening-points">
+              <p class="fragment fade-up">Parents worried about their children online.</p>
+              <p class="fragment fade-up">Checking conversations could strain their relationship.</p>
+              <p class="fragment fade-up">An app handling private messages had to earn their trust, too.</p>
+            </div>
+            
+          </div>
+        </div>
+        <aside class="notes"><p><strong>55 seconds · The turning point.</strong> During recess week we interviewed ten parents. Our notes describe a recurring tension. Parents worried even when nothing serious had happened, and wanted to know what their children were doing. At the same time, they knew that directly checking could offend their child or strain the relationship. Many relied on education and trust. When we introduced Halo, the app itself raised concerns about intrusion and security. We realised we were asking families to trust a new third party with something very sensitive. These interviews helped us see a possible role for Halo as a bridge between parents and children. This is what led us to reconsider our framing. These are themes from our sample, not a claim about every parent.</p><p>Source: w12 reflections.pdf, pages 1–2, Recess week.</p></aside>
+      </section>
+
+      <section id="professors" class="professors-slide" data-title="Learning from our professors" data-week="W7–8" data-chapter="The journey" data-timing="45" data-background-color="#f7f0dc">
+        <div class="slide-content">
+          <p class="eyebrow">WEEKS 7–8 / LISTENING TO FEEDBACK</p>
+          <h2>Feedback on our<br><em>purpose and message.</em></h2>
+          <div class="professor-lessons">
+            <article class="fragment fade-up" data-fragment-index="0"><span class="professor-name">Prof Anand</span><div><h3>Branding includes what Halo stands for</h3><p>Our stance needed to guide how we appealed to parents.</p></div></article>
+            <article class="fragment fade-up" data-fragment-index="1"><span class="professor-name">Prof Victor</span><div><h3>Fear should not drive our pitch</h3><p>We reconsidered the message we wanted families to hear.</p></div></article>
+          </div>
+          <p class="professor-bridge fragment fade-up" data-fragment-index="1">We brought both lessons into a clearer purpose.</p>
+        </div>
+        <aside class="notes"><p><strong>45 seconds · Professor feedback.</strong> Two pieces of feedback helped us put the interviews in context. Professor Anand helped us see branding as more than colours or a logo. We needed a clear stance on the issue and a reason for parents to care about our approach. After our first class pitch, Professor Victor challenged fear-mongering as our primary strategy. Together, these conversations pushed us to reconsider both the purpose of Halo and the way we explained it. We took those lessons back into our team discussions.</p><p>Source: w12 reflections.pdf, page 2, Weeks 7–8. The headings paraphrase the team's reflections, not direct quotations.</p></aside>
+      </section>
+
+      <section id="reframing" class="reframe-slide" data-title="Reframing our purpose" data-week="W7–8" data-chapter="The journey" data-timing="40" data-transition="none" data-purpose-scene data-background-color="#eaf1f5">
+        <div class="slide-content">
+          <p class="eyebrow">WEEKS 7–8 / REFRAMING</p>
+          <h2>A clearer purpose<br><em>for Halo.</em></h2>
+          <p class="purpose-statement fragment fade-up" data-id="purpose-statement"><span class="purpose-words" data-zoom-phrase><span>Help children make</span><span><em>safer choices</em></span></span><br>while respecting their relationship<br>with their parents.</p>
+          
+          
+        </div>
+        <aside class="notes"><p><strong>40 seconds · Reframing.</strong> During Weeks 7 and 8, midterms gave us a pause in outreach and a chance to sit down together. We discussed the aim, user narrative and brand. Professor Anand helped us think about branding as our stance and purpose, beyond colours or fonts. Professor Victor's feedback challenged fear-mongering as our primary strategy. Alongside the interviews, this pushed us to ask how Halo could help parents and children while respecting their relationship. This was a change in how we framed the product. It was not proof that we had already solved the trust problem.</p><p>Source: w12 reflections.pdf, page 2, Weeks 7–8. The purpose statement is a synthesis of the team's reflections, not a quotation.</p></aside>
+      </section>
+
+      <section id="focusing" data-title="Narrowing our focus" data-week="W7–8" data-chapter="The journey" data-timing="30" data-transition="none" data-purpose-scene data-background-color="#f9f7ef">
+        <div class="slide-content">
+          <p class="eyebrow">WEEKS 7–8 / FOCUSING</p>
+          <h2><span class="purpose-words" data-zoom-phrase><span>Help children make</span><span><em>safer choices</em></span></span></h2>
+          <div class="mvp-placeholder fragment fade-up" data-edit-note="week-7-8-features">
+            <span class="small-label">TEAM NOTE / TO FILL IN</span>
+            <h3>Our Week 7–8 MVP decisions</h3>
+            <p>Add the features we kept, what we deferred, and why.</p>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>30 seconds · The MVP choices.</strong> Our new purpose helped us recognise that we needed to reduce the scope of our first version. The exact end-of-Week-8 feature choices still need to be confirmed by our team.</p><p><strong>TEAM TO FILL IN:</strong> Which features did we keep at the end of Weeks 7–8? What did we defer? What discussion or evidence led to those choices? Replace the visible team note with the confirmed decisions. Do not substitute today's features for an unconfirmed historical list.</p><p>Source: w12 reflections.pdf, page 2, Weeks 7–8; team clarification in this chat that the historical feature list is not yet certain.</p></aside>
+      </section>
+
+      <section id="children" data-title="Including children" data-week="W9" data-chapter="The journey" data-timing="40" data-background-color="#fbf3dc">
+        <div class="slide-content two-column children-grid">
+          <div>
+            <p class="eyebrow">WEEK 9 / INCLUDING</p>
+            <h2>Parents could choose it.<br><em>Children had to use it.</em></h2>
+            <p class="body-copy">We interviewed five children as we began building.</p>
+            <p class="lesson fragment fade-up">We still needed to hear from younger children.</p>
+          </div>
+          <div class="age-study">
+            <img class="editorial-icon" src="assets/icons/book-open.svg" alt="" aria-hidden="true" width="56" height="56"><span class="big-number">5</span><span class="number-caption">child interviews</span>
+            <div class="age-line" role="img" aria-label="Target ages 9 to 16; interviewees were around 15 to 16">
+              <span class="age-start">9</span><span class="age-end">16</span><span class="age-range"></span><span class="age-sample">15–16</span>
+            </div>
+            <p class="small-copy">Target ages: 9–16<br>Interviewees: around 15–16</p>
+            <p class="handwritten">One age group can't speak for everyone.</p>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>40 seconds · Including children.</strong> In Week 9 we interviewed five children. This brought us back to the people who would actually use the keyboard. But most were around fifteen or sixteen, at the older end of our intended nine-to-sixteen age range. We should be careful about treating their responses as representative of younger children.  The clear learning is that children need a voice in shaping their experience, and our understanding is still incomplete.</p><p>Source: w12 reflections.pdf, page 2, Week 9. The age scale is descriptive, not a statistical chart.</p></aside>
+      </section>
+
+      <section id="refining" data-title="Refining the experience" data-week="W10" data-chapter="The journey" data-timing="60" data-background-color="#f9f7ef">
+        <div class="slide-content two-column refining-grid">
+          <div>
+            <p class="eyebrow">WEEK 10 / REFINING</p>
+            <h2>The wording<br><em>was part of the work.</em></h2>
+            <p class="body-copy">We explored how a prompt could sound and feel to a young person.</p>
+            <p class="revision-caption" id="revision-caption" aria-live="polite">This reads like a warning notice.</p>
+          </div>
+          <div class="refinement-demo" data-revision="0" data-prevent-swipe aria-label="Four-step illustration of refining Halo's wording and visual style">
+            <div class="revision-topline"><span id="revision-label">01 / THE FIRST WORDING</span><span>ILLUSTRATIVE PROGRESSION</span></div>
+            <div class="revision-context-chat"><span>Alex</span><p>which sch u from?</p></div>
+            <div class="revision-draft">abc sec, u?</div>
+            <div class="refinement-card">
+              <div class="refinement-brand"><img src="assets/halo-logo.png" alt="Halo" width="606" height="267"><span class="nudge-halo" aria-hidden="true"></span></div>
+              <span class="refinement-heading" id="revision-heading">WARNING</span>
+              <p id="revision-copy">Do not disclose your educational institution.</p>
+              <button class="refinement-action" type="button">Dismiss</button>
+            </div>
+            <div class="revision-controls"><span id="revision-counter">01 / 04</span><button id="revision-next" type="button">Next revision <span aria-hidden="true">→</span></button></div>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>60 seconds · Refining.</strong> In Week 10, Alan joined the team. We tried different models and paid close attention to wording, colour and the experience. This illustration makes that design question visible. The first version sounds like an official warning. The next explains the risk more clearly but still sounds formal. We then shorten the language and give the young person a choice. Finally, the softer blue and yellow, Halo logo and clearer action support the same tone. The point is that the AI's wording and the visual experience need to work together if we want children to listen.</p><p>This is an illustrative design progression created for this presentation, not archived prompt versions or evidence of measured user preferences. Sources: w12 reflections.pdf, pages 2–3, Week 10; team request in this chat to explore wording and visual style.</p></aside>
+      </section>
+
+      <section id="progress" data-title="Where we are now" data-week="W11" data-chapter="Progress" data-timing="40" data-background-color="#eaf1f5">
+        <div class="slide-content">
+          <p class="eyebrow">WEEK 11 / TAKING STOCK</p>
+          <h2>There is an app<br><em>we can put in people's hands.</em></h2>
+          <div class="progress-pair">
+            <div><img class="progress-icon" src="assets/icons/smartphone.svg" alt="" aria-hidden="true" width="48" height="48"><span class="small-label">BUILT</span><h3>A working<br>Android prototype</h3><p>Draft checks and supportive guidance.</p></div>
+            <div class="fragment fade-up"><img class="progress-icon" src="assets/icons/rocket.svg" alt="" aria-hidden="true" width="48" height="48"><span class="small-label">PLANNED NEXT</span><h3>A Google Play<br>alpha test</h3><p>Preparing to learn from early testers.</p></div>
+          </div>
+          <p class="handwritten progress-note fragment fade-up">Our first prototype is ready for the next test.</p>
+        </div>
+        <aside class="notes"><p><strong>40 seconds · Honest progress.</strong> By this stage we had a working prototype and could give some parents and children a first look. We also reached out to seven social service agencies and were awaiting interviews. The Google Play milestone is an upcoming alpha test. We plan to put out the alpha soon. We want to celebrate getting from an idea to something real while remaining honest about the defects and limited validation. A working prototype does not yet tell us whether families will keep using it or pay for it.</p><p>Sources: w12 reflections.pdf, page 3, Week 11; repository README.md and MVP_REVIEW.md; team clarification that the Google Play alpha is planned.</p></aside>
+      </section>
+
+      <section id="surprises" data-title="What surprised us" data-chapter="Looking back" data-timing="35" data-background-color="#f9f7ef">
+        <div class="slide-content">
+          <p class="eyebrow">LOOKING BACK / WHAT SURPRISED US</p>
+          <h2>Some of the hardest work<br>was <em>before the code.</em></h2>
+          <div class="surprise-list">
+            <div class="fragment fade-up"><span class="line-number">01</span><p>Reaching people took more effort than we expected.</p></div>
+            <div class="fragment fade-up"><span class="line-number">02</span><p>Our message needed as much thought as our features.</p></div>
+            <div class="fragment fade-up"><span class="line-number">03</span><p>Each answer changed what we needed to ask next.</p></div>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>35 seconds · Surprises.</strong> Looking back, outreach was a substantial part of the work. Sharing a form widely did not automatically lead to many conversations. Then the conversations changed our questions. We began by thinking about online risks, but interviews raised relationship and security concerns. Professor and mentor feedback repeatedly brought us back to the narrative. We spent time on wording because a technically functioning prompt still needs to be something a child is willing to engage with. One thing we would change is to put a smaller first version and these stakeholder conversations earlier in the process.</p><p>Source: w12 reflections.pdf, pages 1–3. These are synthesized team reflections, not quotations or measured user outcomes.</p></aside>
+      </section>
+
+      <section id="learning" data-title="What we learned" data-chapter="Looking back" data-timing="40" data-background-color="#f7f0dc">
+        <div class="slide-content">
+          <p class="eyebrow">THE LESSONS WE ARE TAKING WITH US</p>
+          <h2>The sprint changed<br><em>how we think.</em></h2>
+          <div class="reflection-list">
+            <div><span>The idea</span><p>Parents and children bring different needs.</p></div>
+            <div class="fragment fade-up" data-fragment-index="0"><span>Execution</span><p>Reliable checks need carefully worded guidance.</p></div>
+            <div class="fragment fade-up" data-fragment-index="1"><span>As founders</span><p>Choosing a scope is part of building.</p></div>
+            <div class="fragment fade-up" data-fragment-index="1"><span>As teammates</span><p>A shared purpose needs explicit conversations.</p></div>
+            <div class="fragment fade-up" data-fragment-index="2"><span>As people</span><p>Our enthusiasm sometimes ran ahead of our focus.</p></div>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>40 seconds · Reflection through five lenses.</strong> The idea taught us to distinguish the parent customer from the child user. Execution taught us that AI behaviour and wording both need attention. As founders, we had to make choices about scope. As teammates, the realignment discussions reminded us to make our shared purpose explicit. As people, we recognised how easily enthusiasm could turn into trying to do too much. These are habits we want to carry into the next stage of the project.</p><p>Source: w12 reflections.pdf, pages 1–3. Five reflection lenses follow the baseline showcase structure.</p></aside>
+      </section>
+
+      <section id="next" data-title="What comes next" data-chapter="Looking ahead" data-timing="55" data-background-color="#fbf3dc">
+        <div class="slide-content">
+          <p class="eyebrow">FUTURE / OUTREACH &amp; TESTING</p>
+          <h2>Our next steps<br><em>for Halo.</em></h2>
+          <div class="next-list">
+            <div class="fragment fade-up"><span>Google Play alpha</span><p>Prepare an alpha test and learn from early use.</p></div>
+            <div class="fragment fade-up"><span>Instagram</span><p>Build awareness and help families understand Halo.</p></div>
+            <div class="fragment fade-up"><span>Younger children</span><p>Hear from ages we have not represented well.</p></div>
+            <div class="fragment fade-up"><span>Social service visits</span><p>Hear practitioners’ perspectives and ask what would make Halo more trustworthy.</p></div>
+          </div>
+        </div>
+        <aside class="notes"><p><strong>55 seconds · Next steps.</strong> We plan a Google Play alpha, and we want to make it an opportunity to learn rather than treat distribution as the finish line. We want to understand whether the keyboard stays enabled and how useful or disruptive the prompts feel. Our child interviews need to include younger perspectives through an appropriate research process. We want to establish an Instagram presence to increase awareness and explain Halo to more families. We also want to visit social service agencies to hear a different perspective from practitioners who work with children and families. We want to ask what we might be missing, what concerns they would have about Halo, and what evidence or changes would make it more trustworthy. These visits could also help us understand whether collaboration is appropriate. These are future plans and proposed research questions, not completed interviews, partnerships or measured results.</p><p>Sources: w12 reflections.pdf, page 3, Next Steps; page 2, Week 9; team clarification on planned Google Play alpha. Questions about retention and prompt burden are proposed next experiments, consistent with docs/PRODUCT_VALUE_VALIDATION.md.</p></aside>
+      </section>
+
+      <section id="still-learning" class="closing" data-title="Still learning" data-chapter="Closing" data-timing="20" data-background-color="#f9f7ef">
+        <div class="slide-content">
+          <div class="wordmark"><img src="assets/halo-logo.png" alt="Halo" width="606" height="267"></div>
+          <p class="eyebrow">WHAT WE LEAVE THIS SPRINT WITH</p>
+          <h2>A working prototype.<br>A clearer purpose.<br><em>Better questions.</em></h2>
+          <p class="closing-copy fragment fade-up">And a better understanding of the people we are building for.</p>
+          <p class="handwritten closing-note">still a work in progress.</p>
+          <span class="closing-thanks">Thank you</span>
+        </div>
+        <aside class="notes"><p><strong>20 seconds · Close.</strong> We began with a long list of things we wanted Halo to do. Through the sprint, the people we spoke to and the decisions we had to make gave us a clearer sense of who we serve and what the first version should be. We finish with a working prototype and better questions for the next stage. Thank you.</p><p>Total presentation timing: 600 seconds across 16 slides.</p></aside>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="deck-chrome" aria-label="Presentation controls">
+    <div class="deck-meta"><img class="chrome-brand" src="assets/halo-logo.png" alt="Halo" width="606" height="267"><span class="chrome-divider"></span><span id="chapter-label">Introduction</span></div>
+    <div class="deck-actions">
+      <button id="view-toggle" type="button" title="Switch to scroll view (R)" aria-label="Switch to scroll view">Scroll view</button>
+      <button id="help-toggle" type="button" aria-label="Show navigation help" title="Navigation help">?</button>
+      <span id="slide-counter" aria-live="polite">01 / 16</span>
+      <button id="previous" class="nav-arrow" type="button" aria-label="Previous step" title="Previous step">←</button>
+      <button id="next-step" class="nav-arrow next-arrow" type="button" aria-label="Next step" title="Next step">→</button>
+    </div>
+  </div>
+  <dialog id="help-dialog" aria-labelledby="help-heading">
+    <button id="help-close" type="button" class="dialog-close" aria-label="Close help">×</button>
+    <p class="eyebrow">A FEW SMALL CONTROLS</p>
+    <h2 id="help-heading">Make yourself at home.</h2>
+    <dl><div><dt>→ / Space</dt><dd>Next point or slide</dd></div><div><dt>←</dt><dd>Previous point or slide</dd></div><div><dt>Scroll / swipe</dt><dd>Move through the story</dd></div><div><dt>R</dt><dd>Switch slide / scroll view</dd></div><div><dt>Esc / O</dt><dd>Slide overview</dd></div><div><dt>S</dt><dd>Speaker notes and timer</dd></div><div><dt>F</dt><dd>Full screen</dd></div></dl>
+    <p class="help-foot">16 slides, paced for 10 minutes. Notes work best from the local server.</p>
+  </dialog>
+  <noscript><p class="no-script">Enable JavaScript to view the interactive presentation.</p></noscript>
+</body>
+</html>

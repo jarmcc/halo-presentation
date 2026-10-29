@@ -1,0 +1,22 @@
+HALO SPRINT REFLECTIONS
+
+1. Extract this ZIP into a folder.
+2. Open index.html in a browser. Keep assets, app.js and styles.css beside it.
+3. Right / Space advances the next point. R switches slide / scroll view.
+
+16 slides paced for 10 minutes. The opening loops automatically.
+The Week 10 example progresses through four wording and visual treatments.
+The Halo progress line stays on screen through slide transitions.
+
+TEAM ITEMS TO COMPLETE:
+- Fill in the confirmed end-of-Week-8 MVP decisions in the marked team note.
+
+The website slide includes a locally stored screenshot of
+https://halo-khaki.vercel.app/ and a link to open the actual site.
+
+To use speaker notes, run node server.mjs and open http://127.0.0.1:4173,
+then press S. Node.js is only needed for the local notes server.
+
+The parent and child pictures are generated conceptual illustrations.
+Framework, font and icon licences are included under assets.
+Private source PDFs are not included.
