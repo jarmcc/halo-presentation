@@ -9,6 +9,8 @@ A 16-slide presentation deck for the Halo sprint.
 
 ## Presenting
 
+A full presenter script with timings and handoffs is in [`presentation-script.md`](presentation-script.md).
+
 - **Right arrow / Space** — next point
 - **R** — switch between slide and scroll view
 - **S** — speaker notes (requires the local notes server)
